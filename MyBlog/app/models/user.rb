@@ -1,6 +1,6 @@
-class User < ApplicationRecord::Base
-    has_many : blogs
-    validates: password, presence: true,
-                lenght { minimum: 8}
-    validates: email, presence:true
+class User < ApplicationRecord
+    has_many :blogs
+    validates :password, presence: true,
+                length: { minimum: 8}
+    validates :email, presence:true
 end
