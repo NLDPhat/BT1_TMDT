@@ -27,7 +27,7 @@
 </p>
 
 <%= link_to 'Edit'%>
-<%= link_to 'Delete'%>
+<%= link_to 'destroy', comment, method: :delete, data: { confirm: 'Are you sure?'}%>
 <% end %>
 
 <h2>Add a Comment:</h2>

@@ -6,6 +6,14 @@ class CommentsController < ApplicationController
 
         redirect_to blog_path(@blog) 
     end
+
+    def destroy
+        @comment.destroy
+        respond_to do |format|
+            format.html { redirect_to blog_path, notice: 'Blog was successfully destroyed.' }
+            format.json {head :no_content}
+        end
+    end
     private
     	def comment_params
       		params.require(:comment).permit(:Per, :body)
