@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyBlog</title>
+    <title><%= yield(:page_title) %>MyBlog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <nav class="navbar navbar-dark bg-inverse">
+      <div class="nav navbar-nav">
+        <% link_to 'Home', root_path, class: "nav-item nav-link" %>
+        <% link_to 'Blog', blogs_path, class: "nav-item nav-link" %>
+        <% link_to 'About', about_path, class: "nav-item nav-link" %>
+        <% link_to 'Contact', contact_path, class: "nav-item nav-link" %>
+
+      </div>
+        <a href="users/new" class="btn btn-outline-success pull-xs-right" style="margin-left:10px">Register</a>
+        <a href="#" class="btn btn-outline-success pull-xs-right" style="margin-left:10px">Login</a>
+  </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+</body>
 </html>
