@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930175350) do
+ActiveRecord::Schema.define(version: 20161001042043) do
+
+  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Title"
+    t.text     "post",       limit: 65535
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Per"
+    t.text     "body",       limit: 65535
+    t.integer  "blog_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "password"
@@ -19,4 +36,5 @@ ActiveRecord::Schema.define(version: 20160930175350) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "blogs"
 end
