@@ -1,4 +1,5 @@
 <% provide(:page_title, @blog.Title) %>
+<% provide(:Per,'2')%>
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -13,7 +14,7 @@
     <div class="alert alert-success" role="alert">
       <strong>Your comment: </strong> <%= comment.body %>
       <div class="text-xs-right">
-        <%= link_to 'Edit'%> | <%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' }%>
+        <%= link_to 'Edit', class: 'btn btn-sm btn-warning' %> | <%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' }%>
       </div>
     </div>
     <div>
@@ -25,20 +26,15 @@
 <h5 class="text-muted">Add Comments</h5>
 
 <%= form_for([@blog, @blog.comments.build]) do |f| %>
-  <p>
-    <%= f.label :Per %><br/>
-    <%= f.text_field :Per %>
-  </p>
 
   <p>
-    <%= f.label :body %><br/>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, size:"100x3" %>
   </p>
   
   <p>
-  <%= f.submit %>
+  <%= f.submit 'Comment', :class => 'btn btn-default' %>
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+
+<%= link_to 'Back', blogs_path, class: 'btn btn-default' %>
