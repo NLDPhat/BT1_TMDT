@@ -9,9 +9,8 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment.destroy
-        @blog = Blog.find(params[:blog:id])
         respond_to do |format|
-            format.html { redirect_to blog_path(@blog), notice: 'Blog was successfully destroyed.' }
+            format.html { redirect_to blog_path, notice: 'Blog was successfully destroyed.' }
             format.json { head :no_content }
         end
     end

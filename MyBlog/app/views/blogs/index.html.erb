@@ -2,9 +2,11 @@
 <% provide(:blog_active,'active') %>
 <p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
 
-    <%= render @blogs %>
+<div class="row">
+  <%= render @blogs %>
+</div>
+
 
 <%= link_to 'New Blog', new_blog_path %>
 

@@ -1,37 +1,28 @@
 <% provide(:page_title, @blog.Title) %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.Title %>
-</p>
+<div class="row">
+  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+    <h1><%= @blog.Title %></h1>
+    <p><%= @blog.post %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Post:</strong>
-  <%= @blog.post %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @blog.user_id %>
-</p>
-<h2>Comments</h2>
+<h5 class="text-muted">Comments</h5>
 <% @blog.comments.each do |comment| %>
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.Per %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<%= link_to 'Edit'%>
-<%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' }%>
+    <div class="alert alert-success" role="alert">
+      <strong>Your comment: </strong> <%= comment.body %>
+      <div class="text-xs-right">
+        <%= link_to 'Edit'%> | <%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' }%>
+      </div>
+    </div>
+    <div>
+    
+    
+    </div>
 <% end %>
 
-<h2>Add a Comment:</h2>
+<h5 class="text-muted">Add Comments</h5>
 
 <%= form_for([@blog, @blog.comments.build]) do |f| %>
   <p>
