@@ -1,0 +1,11 @@
+<div class="col-sm-3"> 
+      <div class="card card-block">
+        <h5 class="card-title text-center"><%= blog.Title %></h3>
+        <img src="http://bit.ly/2dFYPpz" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="card-block">
+            <%= link_to 'Show', blog, class: 'card-link' %>
+            <%= link_to 'Edit', edit_blog_path(blog), class: 'card-link' %>
+            <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+        </div>
+      </div>
+</div>
