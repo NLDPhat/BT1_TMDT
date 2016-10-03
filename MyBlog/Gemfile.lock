@@ -160,6 +160,7 @@ DEPENDENCIES
   jquery-rails
   mysql2 (>= 0.3.18, < 0.5)
   puma (~> 3.0)
+  rack
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-assets-tether (>= 1.1.0)!
   sass-rails (~> 5.0)
