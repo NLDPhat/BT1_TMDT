@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+before_action :set_comment, only: [:edit, :destroy]
     def create
         @blog = Blog.find(params[:blog_id])
 
@@ -8,14 +9,20 @@ class CommentsController < ApplicationController
     end
 
     def destroy
+        @blog = Blog.find(params[:blog_id])
+        @comment = @blog.comments.find(params[:id])
         @comment.destroy
         respond_to do |format|
-            format.html { redirect_to blog_path, notice: 'Blog was successfully destroyed.' }
+            format.html { redirect_to blog_path(@blog) }
             format.json { head :no_content }
         end
     end
+
     private
-    	def comment_params
-      		params.require(:comment).permit(:Per, :body)
+    def set_comment
+        @comment=Comment.find(params[:id])
+    end
+    def comment_params
+      	params.require(:comment).permit(:Per, :body)
     end
 end
