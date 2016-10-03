@@ -53,7 +53,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+ + Ngôn ngữ quá mới, em phải học lại từ đầu.
+ + Thời gian quá ngắn, em không làm được nhiều
+
 
 ## License
 
