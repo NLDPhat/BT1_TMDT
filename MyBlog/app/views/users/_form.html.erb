@@ -11,18 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
+  <div class="form-group">
+  
+    <h5>Email</h5>
+    <%= f.text_field :email, :class => 'form-group', :style => 'width: 50%; height:40px' %>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <h5>Password</h5>
+    <%= f.text_field :password, :class => 'form-group', :style => 'width: 50%; height:40px' %> 
+
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' , :class => 'btn btn-success' %>
+    <%= link_to 'Back', root_path, :class => 'btn btn-info' %>
   </div>
+</div>
 <% end %>
+
