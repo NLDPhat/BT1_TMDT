@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
+<div class="container well">
+  <div class="alert alert-info" style="width:40%">
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <div class="alert alert-info" style="width:40%">
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-success' %>
+  <%= link_to 'Back', users_path, :class => 'btn btn-primary' %>
+</div>

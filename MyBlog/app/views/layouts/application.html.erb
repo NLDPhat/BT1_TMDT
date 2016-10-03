@@ -14,7 +14,7 @@
     </style>
   </head>
 
-  <body background="http://bit.ly/2cMlNWe" style="width:100%">
+  <body background="http://bit.ly/2dSSlmr" style="width:100%">
     <nav class="navbar navbar-dark bg-inverse">
       <div class="nav navbar-nav list-group list-group-flush">
         <%= link_to 'Home', root_path, class: "nav-item nav-link " %>
@@ -22,7 +22,7 @@
         <%= link_to 'About', about_path, class: "nav-item nav-link #{yield(:about_active)}" %>
         <%= link_to 'Contact', contact_path, class: "nav-item nav-link #{yield(:contact_active)}" %>
       </div>
-        <a href="users/new" class="btn btn-outline-success pull-xs-right" style="margin-left:10px">Register</a>
+        <%= link_to 'Register',register_path, class: "btn btn-outline-success pull-xs-right", style: "margin-left:10px"%>
         <a href="#" class="btn btn-outline-success pull-xs-right" style="margin-left:10px">Login</a>
   </nav>
   <div class="container" <%=controller_name%> <%=action_name%>>
