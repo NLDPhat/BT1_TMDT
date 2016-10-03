@@ -4,7 +4,7 @@
 
 Danh sách sinh viên: **1312422-Nguyen Le Duy Phat; 1312322-Dang Huy Long**
 
-URL: **Insert your Heroku URL here**
+URL: **https://itbloger.herokuapp.com/**
 
 ## Chức năng
 
